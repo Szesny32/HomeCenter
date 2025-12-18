@@ -70,7 +70,7 @@ public class TestTableRepository {
     }
 
     public List<TestTable> findAll() {
-        String sql = "SELECT * FROM TEST_TABLE";
+        String sql = "SELECT * FROM " + TABLE_NAME;
         RowMapper<TestTable> mapper = (ResultSet rs, int rowNum) -> {
             TestTable testRecord = new TestTable();
             testRecord.setId(rs.getLong("id"));
