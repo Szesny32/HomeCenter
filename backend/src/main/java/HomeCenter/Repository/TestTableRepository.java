@@ -26,8 +26,10 @@ public class TestTableRepository {
     @Autowired
     JdbcTemplate template;
 
+    private final String TABLE_NAME = "test_table";
+
     public TestTable save(String value){
-        String sql = "INSERT INTO TEST_TABLE(value) VALUES (:value)";
+        String sql = "INSERT INTO " + TABLE_NAME + "(value) VALUES (:value)";
         SqlParameterSource namedParameters = new MapSqlParameterSource()
                 .addValue("value", value);
         paramTemplate.update(sql, namedParameters);
@@ -36,7 +38,7 @@ public class TestTableRepository {
     }
 
     public Optional<TestTable> findByValue(String value) {
-        String sql = "SELECT * FROM TEST_TABLE WHERE value = :value";
+        String sql = "SELECT * FROM " + TABLE_NAME + " WHERE value = :value";
         SqlParameterSource namedParameters = new MapSqlParameterSource("value", value);
         RowMapper<TestTable> mapper = (ResultSet rs, int rowNum) -> {
             TestTable testRecord = new TestTable();
@@ -52,7 +54,7 @@ public class TestTableRepository {
     }
 
     public Optional<TestTable> findById(Long id) {
-        String sql = "SELECT * FROM TEST_TABLE WHERE id = :id";
+        String sql = "SELECT * FROM " + TABLE_NAME + " WHERE id = :id";
         SqlParameterSource namedParameters = new MapSqlParameterSource("id", id);
         RowMapper<TestTable> mapper = (ResultSet rs, int rowNum) -> {
             TestTable testRecord = new TestTable();

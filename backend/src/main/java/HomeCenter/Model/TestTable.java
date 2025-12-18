@@ -9,7 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
-@Table(name = "TEST_TABLE")
+@Table(name = "test_table")
 @Getter @Setter
 public class TestTable {
 
