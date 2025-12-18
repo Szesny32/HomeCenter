@@ -1,0 +1,16 @@
+[Unit]
+Description=HomeCenter Spring Boot Service
+After=network.target
+
+[Service]
+User=szesny
+WorkingDirectory=/home/szesny/HomeCenter/backend
+ExecStart=/usr/bin/java -jar /home/szesny/repos/HomeCenter/backend/target/HomeCenter-0.0.1-SNAPSHOT.jar
+SuccessExitStatus=143
+Restart=always
+Environment="HOME_CENTER_DB=HOME_CENTER_DB"
+Environment="HOME_CENTER_USER=HOME_CENTER_USER"
+Environment="HOME_CENTER_PASSWORD=HOME_CENTER_PASSWORD"
+
+[Install]
+WantedBy=multi-user.target
