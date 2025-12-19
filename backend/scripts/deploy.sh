@@ -3,9 +3,6 @@ echo "Deploying backend application..."
 echo "Resetting backend codebase..."
 ./reset_homecenter.sh
 
-sudo chmod +x ./*
-sudo chmod +x ./../mvnw
-
 echo "Cleaning system logs..."
 ./clean_logs.sh
 
