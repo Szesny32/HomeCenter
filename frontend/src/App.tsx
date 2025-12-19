@@ -30,10 +30,13 @@ export default function App() {
     fetchHistory();
   }, []);
 
+  const WS_URL =
+  import.meta.env.MODE === 'development' ? "http://localhost:8080/ws" : "/ws";
+
   // Initialize WebSocket / STOMP client with SockJS
   useEffect(() => {
     const client = new Client({
-      webSocketFactory: () => new SockJS('http://localhost:8080/ws'),
+      webSocketFactory: () => new SockJS(WS_URL),
       reconnectDelay: 5000,
     });
 
