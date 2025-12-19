@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=szesny
-WorkingDirectory=/home/szesny/HomeCenter/backend
+WorkingDirectory=/home/szesny/repos/HomeCenter/backend
 ExecStart=/usr/bin/java -jar /home/szesny/repos/HomeCenter/backend/target/HomeCenter-0.0.1-SNAPSHOT.jar
 SuccessExitStatus=143
 Restart=always
