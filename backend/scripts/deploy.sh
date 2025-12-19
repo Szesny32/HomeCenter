@@ -3,11 +3,13 @@ echo "Deploying backend application..."
 echo "Resetting backend codebase..."
 ./reset_homecenter.sh
 
+sudo chmod +x ./*
+
 echo "Cleaning system logs..."
 ./clean_logs.sh
 
 echo "Building backend application..."
-./build_backend.sh
+./build_package.sh
 
 echo "Stopping existing backend service..." 
 ./stop_homecenter.sh
