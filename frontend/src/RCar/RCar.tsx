@@ -24,8 +24,8 @@ function RCar() {
 
 
 const [direction, setDirection] = useState<Direction>("stop");
-const [powerLeft, setPowerLeft] = useState<number>(0);
-const [powerRight, setPowerRight] = useState<number>(0);
+const [powerLeft, setPowerLeft] = useState<number>(180);
+const [powerRight, setPowerRight] = useState<number>(180);
 
   useEffect(() => {
   if (mode !== "manual2") return;
@@ -130,18 +130,12 @@ const [powerRight, setPowerRight] = useState<number>(0);
           
 {mode === "manual2" && (
   <div>
-    <div>
-      <button onClick={() => setDirection("forward")} >⬆️</button>
-    </div>
-
-    <div>
-      <button onClick={() => setDirection("left")}>⬅️</button>
-      <button onClick={() => setDirection("stop")}>⏹</button>
-      <button onClick={() => setDirection("right")}>➡️</button>
-    </div>
-
-    <div>
-      <button onClick={() => setDirection("backward")}>⬇️</button>
+    <div className="dpad">
+      <button className="up" onClick={() => setDirection("forward")}>⬆️</button>
+      <button className="left" onClick={() => setDirection("left")}>⬅️</button>
+      <button className="center" onClick={() => setDirection("stop")}>🚫</button>
+      <button className="right" onClick={() => setDirection("right")}>➡️</button>
+      <button className="down" onClick={() => setDirection("backward")}>⬇️</button>
     </div>
 
     <div>

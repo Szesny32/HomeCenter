@@ -23,3 +23,47 @@
 .active-button{
     filter: invert(24%) sepia(93%) saturate(4882%) hue-rotate(182deg) brightness(90%) contrast(90%);
 }
+.manual2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 10px;
+}
+
+.dpad button {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Pozycje */
+.up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.center {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.down {
+  grid-column: 2;
+  grid-row: 3;
+}
